@@ -11,7 +11,8 @@ DateTime <- strptime(DateTime, "%d/%m/%Y %H:%M:%S")
 DateTime <- as.data.frame(DateTime)
 PreciseData <- cbind(DateTime, PreciseData)
 PreciseData <- select(PreciseData, -Date, -Time)
-
+xlabels <- strptime(c("2007-02-01 00:00:00", "2007-02-02 00:00:00", "2007-02-03 00:00:00"), format = "%Y-%m-%d %H:%M:%S")
+xlabels <- as.data.frame(xlabels)
 ##plot the plot on a png file
 
 png(filename = "plot2.png", width = 480, height = 480, units = "px")
